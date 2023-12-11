@@ -23,9 +23,6 @@
 .selengkapnya p{
   color: #000000;
 }
-.btn-tutup-selengkapnya{
-
-}
 .overlay {
   display: none;
   position: fixed;
@@ -377,7 +374,6 @@ input[type=radio]:checked {
 }
 .box-content{
   display: flex;
-  column-gap: 20px;
 }
 .content1 p, .content2 p, .content1 li, .content2 li{
   color: #000000;

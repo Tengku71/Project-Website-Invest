@@ -74,18 +74,15 @@ const btnSelengkapnya = document.querySelector('.btn-selengkapnya');
 const btnCloseSelengkapnya = document.querySelector('.btn-tutup-selengkapnya');
 btnSelengkapnya.addEventListener('click', function(){
   document.querySelector('.selengkapnya').style.display = 'block';
+  document.querySelector('.selengkapnya').style.overflow = 'scroll';
   disableScroll();  
   overlayBlur();
   document.querySelector('.selengkapnya').addEventListener('mouseleave', function(){
     document.querySelector('.selengkapnya').style.display = 'none';
+    document.querySelector('.selengkapnya').style.overflow = 'hidden';
     enableScroll();
     disableOverlay();
   })
-})
-btnCloseSelengkapnya.addEventListener('click', function(){
-  document.querySelector('.selengkapnya').style.display = 'none';
-  enableScroll()
-  document.querySelector('.overlay-selengkapnya').style.display = 'none';
 })
 
 
@@ -115,8 +112,6 @@ const Pkt1 = document.querySelector('.paket1');
 const Pkt2 = document.querySelector('.paket2')
 const btnPaket1 = document.querySelector('.btn-paket1');
 const btnPaket2 = document.querySelector('.btn-paket2');
-const btnClosePkt1 = document.querySelector('.btn-tutup-paket1');
-const btnClosePkt2 = document.querySelector('.btn-tutup-paket2');
 
 btnPaket1.addEventListener('click', function(){
   Pkt1.style.display = 'block';
@@ -128,11 +123,6 @@ btnPaket1.addEventListener('click', function(){
     disableOverlay();
   })
 })
-btnClosePkt1.addEventListener('click', function(){
-  Pkt1.style.display = 'none';
-  enableScroll()
-  disableOverlay();
-})
 btnPaket2.addEventListener('click', function(){
   Pkt2.style.display = 'block';
   disableScroll();
@@ -142,11 +132,6 @@ btnPaket2.addEventListener('click', function(){
     enableScroll();
     disableOverlay();
   })
-})
-btnClosePkt2.addEventListener('click', function(){
-  Pkt2.style.display = 'none';
-  enableScroll()
-  disableOverlay();
 })
 
 
