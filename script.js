@@ -68,6 +68,27 @@ function startAutoplay() {
 // Call the startAutoplay function when the page is loaded
 document.addEventListener('DOMContentLoaded', startAutoplay);
 
+// Hero Section
+
+const btnSelengkapnya = document.querySelector('.btn-selengkapnya');
+const btnCloseSelengkapnya = document.querySelector('.btn-tutup-selengkapnya');
+btnSelengkapnya.addEventListener('click', function(){
+  document.querySelector('.selengkapnya').style.display = 'block';
+  disableScroll();  
+  overlayBlur();
+  document.querySelector('.selengkapnya').addEventListener('mouseleave', function(){
+    document.querySelector('.selengkapnya').style.display = 'none';
+    enableScroll();
+    disableOverlay();
+  })
+})
+btnCloseSelengkapnya.addEventListener('click', function(){
+  document.querySelector('.selengkapnya').style.display = 'none';
+  enableScroll()
+  document.querySelector('.overlay-selengkapnya').style.display = 'none';
+})
+
+
 // Btn Jadwal
 const btnJadwal = document.querySelector('.btn2');
 const btnCloseJadwal = document.querySelector('.btn-tutup');
@@ -141,7 +162,6 @@ document.querySelector('#prev').onclick = function(){
 }
 
 // btn sewa jeep
-
 const btnJeep1 = document.querySelector('.jeep1');
 const btnJeep2 = document.querySelector('.jeep2');
 const btnJeep3 = document.querySelector('.jeep3');
@@ -277,10 +297,12 @@ ScrollReveal({
 function overlayBlur(){
   document.querySelector('.overlay-about').style.display = 'block';
   document.querySelector('.overlay-paket').style.display = 'block';
+  document.querySelector('.overlay-selengkapnya').style.display = 'block';
 }
 function disableOverlay(){
   document.querySelector('.overlay-paket').style.display = 'none';
   document.querySelector('.overlay-about').style.display = 'none';
+  document.querySelector('.overlay-selengkapnya').style.display = 'none';
 }
 
  function disableScroll() { 
