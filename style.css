@@ -674,7 +674,7 @@ input[type=radio]:checked {
 }
 
 
-.booking .box-booking p{
+.booking .box-booking p, .box-booking a{
   border: none;
   display: flex;
   align-items: center;
@@ -685,6 +685,7 @@ input[type=radio]:checked {
   background-color: #053e83;
   color: white;
   padding-inline: 10px;
+  text-decoration: none;
 }
 .box-booking p:hover{
   scale: 1.02;
@@ -694,7 +695,7 @@ input[type=radio]:checked {
   column-gap: 10px;
   justify-content: center;
 }
-.booking .box-booking p i{
+.booking .box-booking p i, .box-booking a i{
   padding-right: 10px;
 }
 .container-booking{
@@ -703,12 +704,14 @@ input[type=radio]:checked {
   padding-bottom: 100px;
   width: 80%;
   left: 10%;
+  top: 10%;
   transform: translate(0, 0%);
   background: #fff;
   padding: 25px;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   z-index: 2000;
+  padding-bottom: 200px;
 }
 .container header{
   font-size: 1.5rem;
