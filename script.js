@@ -73,17 +73,40 @@ document.addEventListener('DOMContentLoaded', startAutoplay);
 const btnSelengkapnya = document.querySelector('.btn-selengkapnya');
 const btnCloseSelengkapnya = document.querySelector('.btn-tutup-selengkapnya');
 btnSelengkapnya.addEventListener('click', function(){
-  document.querySelector('.selengkapnya').style.display = 'block';
-  document.querySelector('.selengkapnya').style.overflow = 'scroll';
-  disableScroll();  
-  overlayBlur();
-  document.querySelector('.selengkapnya').addEventListener('mouseleave', function(){
-    document.querySelector('.selengkapnya').style.display = 'none';
-    document.querySelector('.selengkapnya').style.overflow = 'hidden';
-    enableScroll();
-    disableOverlay();
-  })
-})
+  if (x.matches) { // If media query matches
+    if (y.matches) { // If media query matches
+      document.querySelector('.selengkapnya').style.display = 'block';
+      document.querySelector('.selengkapnya').style.overflow = 'scroll';
+      disableScroll();  
+      overlayBlur();
+      document.querySelector('.selengkapnya').addEventListener('mouseleave', function(){
+        document.querySelector('.selengkapnya').style.display = 'none';
+        document.querySelector('.selengkapnya').style.overflow = 'hidden';
+        enableScroll();
+        disableOverlay();
+      })
+    }else{
+      document.querySelector('.selengkapnya').style.display = 'block';
+      disableScroll();  
+      overlayBlur();
+      document.querySelector('.selengkapnya').addEventListener('mouseleave', function(){
+        document.querySelector('.selengkapnya').style.display = 'none';
+        document.querySelector('.selengkapnya').style.overflow = 'hidden';
+        enableScroll();
+        disableOverlay();
+      })
+    }
+  }else{
+    document.querySelector('.selengkapnya').style.display = 'block';
+    disableScroll();  
+    overlayBlur();
+    document.querySelector('.selengkapnya').addEventListener('mouseleave', function(){
+      document.querySelector('.selengkapnya').style.display = 'none';
+      document.querySelector('.selengkapnya').style.overflow = 'hidden';
+      enableScroll();
+      disableOverlay();
+    })
+}})
 
 
 // Btn Jadwal
